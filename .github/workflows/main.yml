@@ -13,6 +13,13 @@ jobs:
         run: |
           echo `whoami`
           dscl . list /Users | grep -v “^_”
+      - name: r u admin tho
+          if groups `whoami` | grep -q -w admin; 
+          then 
+            echo "Is admin. :)"; 
+          else 
+            echo "YOU SHALL NOT PASS!!! >:("; 
+          fi
       - name: Brewery
         run: |
           which brew
