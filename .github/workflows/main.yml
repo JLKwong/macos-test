@@ -14,6 +14,7 @@ jobs:
           echo `whoami`
           dscl . list /Users | grep -v “^_”
       - name: r u admin tho
+        run: |
           if groups `whoami` | grep -q -w admin; 
           then 
             echo "Is admin. :)"; 
