@@ -21,10 +21,7 @@ jobs:
       - name: Install
         run: |
           brew install coreutils redis mysql mysql-client
-          brew install --cask postman
-          brew install --cask atom
-          brew install --cask sourcetree
-          brew install --cask beyond-compare
+          brew install --cask postman atom sourcetree beyond-compare
       - name: But did it brew?
         run: |
           brew list
