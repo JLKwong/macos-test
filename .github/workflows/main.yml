@@ -35,5 +35,5 @@ jobs:
           brew install --cask postman atom sourcetree beyond-compare
       - name: But did it brew?
         run: |
-          brew list | grep -f coreutils redis mysql mysql-client
-          brew list --cask | grep -f postman atom sourcetree beyond-compare
+          brew list | grep `coreutils|redis|mysql|mysql-client`
+          brew list --cask | grep `postman|atom|sourcetree|beyond-compare`
