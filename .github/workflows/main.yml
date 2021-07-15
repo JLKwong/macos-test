@@ -1,0 +1,31 @@
+name: Test Installs
+
+on: 
+  push: 
+
+jobs:
+  build-image:
+    runs-on: macOS-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Who am I? Who am I? What are you even saying?
+        run: |
+          echo `whoami`
+          dscl . list /Users | grep -v “^_”
+      - name: Brewery
+        run: |
+          which brew
+          mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+          which brew
+      - name: Install
+        run: |
+          brew install coreutils redis mysql mysql-client
+          brew install --cask postman
+          brew install --cask atom
+          brew install --cask sourcetree
+          brew install --cask beyond-compare
+      - name: But did it brew?
+        run: |
+          brew list
+          brew list --cask
