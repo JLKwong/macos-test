@@ -32,10 +32,10 @@ jobs:
       - name: Install
         run: |
           brew install coreutils redis mysql mysql-client
-          brew install --cask postman atom sourcetree beyond-compare
+          brew install --cask --appdir=/usr/local/Cellar/ postman atom sourcetree beyond-compare
       - name: But did it brew?
         run: |
           brew list | grep -E 'coreutils|redis|mysql|mysql-client'
-          brew list --cask | grep -E 'postman|atom|sourcetree|beyond-compare' --appdir=/usr/local/Cellar/
+          brew list --cask | grep -E 'postman|atom|sourcetree|beyond-compare'
           cd /usr/local/Cellar/
           ls -al
