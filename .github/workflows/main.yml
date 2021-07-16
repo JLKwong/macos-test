@@ -36,4 +36,6 @@ jobs:
       - name: But did it brew?
         run: |
           brew list | grep -E 'coreutils|redis|mysql|mysql-client'
-          brew list --cask | grep -E 'postman|atom|sourcetree|beyond-compare'
+          brew list --cask | grep -E 'postman|atom|sourcetree|beyond-compare' --appdir=/usr/local/Cellar/
+          cd /usr/local/Cellar/
+          ls -al
